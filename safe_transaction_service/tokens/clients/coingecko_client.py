@@ -138,3 +138,9 @@ class CoingeckoClient:
 
     def get_gather_usd_price(self) -> float:
         return self.get_price("gather")
+
+    def get_acala_usd_price(self) -> float:
+        return self.get_price("acala")
+
+    def get_karura_usd_price(self) -> float:
+        return self.get_price("karura")
