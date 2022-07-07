@@ -75,11 +75,11 @@ class EventsIndexer(EthereumIndexer):
         """
         filter_topics = list(self.events_to_listen.keys())
         result = List[LogReceipt]
-        for i in filter_topics:
+        for topic in filter_topics:
             parameters: FilterParams = {
                 "fromBlock": from_block_number,
                 "toBlock": to_block_number,
-                "topics": i,
+                "topics": [topic],
             }
 
             if not self.IGNORE_ADDRESSES_ON_LOG_FILTER:
