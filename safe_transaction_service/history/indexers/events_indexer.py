@@ -74,16 +74,20 @@ class EventsIndexer(EthereumIndexer):
         :return:
         """
         filter_topics = list(self.events_to_listen.keys())
-        parameters: FilterParams = {
-            "fromBlock": from_block_number,
-            "toBlock": to_block_number,
-            "topics": [filter_topics],
-        }
+        result = List[LogReceipt]
+        for i in filter_topics:
+            parameters: FilterParams = {
+                "fromBlock": from_block_number,
+                "toBlock": to_block_number,
+                "topics": i,
+            }
 
-        if not self.IGNORE_ADDRESSES_ON_LOG_FILTER:
-            parameters["address"] = addresses
+            if not self.IGNORE_ADDRESSES_ON_LOG_FILTER:
+                parameters["address"] = addresses
 
-        return self.ethereum_client.slow_w3.eth.get_logs(parameters)
+            result.append(self.ethereum_client.slow_w3.eth.get_logs(parameters))
+
+        return result
 
     def _find_elements_using_topics(
         self,
