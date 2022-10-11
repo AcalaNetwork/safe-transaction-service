@@ -36,6 +36,8 @@ class CoingeckoClient:
             self.asset_platform = "optimistic-ethereum"
         elif network == EthereumNetwork.XDAI:
             self.asset_platform = "xdai"
+        elif network == EthereumNetwork.FUSE_MAINNET:
+            self.asset_platform = "fuse"
         elif network == EthereumNetwork.ACA:
             self.asset_platform = "acala"
         elif network == EthereumNetwork.KAR:
@@ -54,6 +56,7 @@ class CoingeckoClient:
             EthereumNetwork.MATIC,
             EthereumNetwork.OPTIMISTIC,
             EthereumNetwork.XDAI,
+            EthereumNetwork.FUSE_MAINNET,
             EthereumNetwork.ACA,
             EthereumNetwork.KAR,
         )
@@ -144,6 +147,9 @@ class CoingeckoClient:
 
     def get_gather_usd_price(self) -> float:
         return self.get_price("gather")
+
+    def get_fuse_usd_price(self) -> float:
+        return self.get_price("fuse-network-token")
 
     def get_acala_usd_price(self) -> float:
         return self.get_price("acala")
