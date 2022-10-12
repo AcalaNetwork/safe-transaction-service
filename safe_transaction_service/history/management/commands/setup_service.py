@@ -317,8 +317,8 @@ MASTER_COPIES: Dict[EthereumNetwork, List[Tuple[str, int, str]]] = {
         ("0x69f4D1788e39c87893C980c06EdF4b7f686e2938", 3002760, "1.3.0"),
     ],
     EthereumNetwork.MACA_TESTNET: [
-        ("0xfb1bffC9d739B8D520DaF37dF666da4C687191EA", 1606727, "1.3.0+L2"),
-        ("0x69f4D1788e39c87893C980c06EdF4b7f686e2938", 1606729, "1.3.0"),
+        ("0xfb1bffC9d739B8D520DaF37dF666da4C687191EA", 1, "1.3.0+L2"),
+        ("0x69f4D1788e39c87893C980c06EdF4b7f686e2938", 1, "1.3.0"),
     ],
     EthereumNetwork.ACA: [
         ("0xfb1bffC9d739B8D520DaF37dF666da4C687191EA", 1559725, "1.3.0+L2"),
@@ -489,7 +489,7 @@ PROXY_FACTORIES: Dict[EthereumNetwork, List[Tuple[str, int]]] = {
         ("0xC22834581EbC8527d974F8a1c97E1bEA4EF910BC", 2958469),  # v1.3.0
     ],
     EthereumNetwork.MACA_TESTNET: [
-        ("0xC22834581EbC8527d974F8a1c97E1bEA4EF910BC", 1606640),  # v1.3.0
+        ("0xC22834581EbC8527d974F8a1c97E1bEA4EF910BC", 1),  # v1.3.0
     ],
     EthereumNetwork.ACA: [
         ("0xC22834581EbC8527d974F8a1c97E1bEA4EF910BC", 1559612),  # v1.3.0
